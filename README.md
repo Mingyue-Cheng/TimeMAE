@@ -13,6 +13,7 @@ Pytorch implementation of paper:
   year={2023}
 }
 
-Public Datasets:
-
+Publicly Available Datasets:
 https://drive.google.com/drive/folders/128bIAabc5G3RzyYTonPZv8RWttuQ7Roh?usp=drive_link
+
+**Please don't hesitate to contact me via email (mycheng@ustc.edu.cn) if you have any questions about our work.**
