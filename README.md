@@ -33,5 +33,60 @@ In this work, we propose TimeMAE, a novel self-supervised paradigm for learning 
 <img width="1000" alt="截屏2024-09-13 11 20 12" src="https://github.com/user-attachments/assets/6eec9815-036f-4393-a3f8-bd5ca56f3309">
 
 
+### Further Reading
+
+1, [**CrossTimeNet: Learning Transferable Time Series Classifier with Cross-Domain Pre-training from Language Model**](https://arxiv.org/pdf/2403.12372).
+
+**Authors**: Cheng, Mingyue and Tao, Xiaoyu and Liu, Qi and Zhang, Hao and Chen, Yiheng and Lei, Chenyi
+
+```bibtex
+@article{cheng2024learning,
+  title={Learning Transferable Time Series Classifier with Cross-Domain Pre-training from Language Model},
+  author={Cheng, Mingyue and Tao, Xiaoyu and Liu, Qi and Zhang, Hao and Chen, Yiheng and Lei, Chenyi},
+  journal={arXiv preprint arXiv:2403.12372},
+  year={2024}
+}
+
+2, [**FormerTime: Hierarchical Multi-Scale Representations for Multivariate Time Series Classification**](https://arxiv.org/pdf/2302.09818).
+
+**Authors**: Cheng, Mingyue and Liu, Qi and Liu, Zhiding and Li, Zhi and Luo, Yucong and Chen, Enhong
+
+```bibtex
+@inproceedings{cheng2023formertime,
+  title={Formertime: Hierarchical multi-scale representations for multivariate time series classification},
+  author={Cheng, Mingyue and Liu, Qi and Liu, Zhiding and Li, Zhi and Luo, Yucong and Chen, Enhong},
+  booktitle={Proceedings of the ACM Web Conference 2023},
+  pages={1437--1445},
+  year={2023}
+}
+```
+
+3, [**Convtimenet: A deep hierarchical fully convolutional model for multivariate time series analysis**](https://arxiv.org/pdf/2403.01493).
+
+**Authors**: Cheng, Mingyue and Yang, Jiqian and Pan, Tingyue and Liu, Qi and Li, Zhi
+
+```bibtex
+@article{cheng2024convtimenet,
+  title={Convtimenet: A deep hierarchical fully convolutional model for multivariate time series analysis},
+  author={Cheng, Mingyue and Yang, Jiqian and Pan, Tingyue and Liu, Qi and Li, Zhi},
+  journal={arXiv preprint arXiv:2403.01493},
+  year={2024}
+}
+```
+
+4, [**InstructTime: Advancing Time Series Classification with Multimodal Language Modeling**](https://arxiv.org/pdf/2403.12371).
+
+**Authors**: Cheng, Mingyue and Chen, Yiheng and Liu, Qi and Liu, Zhiding and Luo, Yucong
+
+```bibtex
+@article{cheng2024advancing,
+  title={Advancing Time Series Classification with Multimodal Language Modeling},
+  author={Cheng, Mingyue and Chen, Yiheng and Liu, Qi and Liu, Zhiding and Luo, Yucong},
+  journal={arXiv preprint arXiv:2403.12371},
+  year={2024}
+}
+
+```
+
 
 
