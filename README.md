@@ -46,6 +46,7 @@ In this work, we propose TimeMAE, a novel self-supervised paradigm for learning 
   journal={arXiv preprint arXiv:2403.12372},
   year={2024}
 }
+```
 
 2, [**FormerTime: Hierarchical Multi-Scale Representations for Multivariate Time Series Classification**](https://arxiv.org/pdf/2302.09818).
 
