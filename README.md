@@ -48,7 +48,20 @@ In this work, we propose TimeMAE, a novel self-supervised paradigm for learning 
 }
 ```
 
-2, [**FormerTime: Hierarchical Multi-Scale Representations for Multivariate Time Series Classification**](https://arxiv.org/pdf/2302.09818).
+2, [**Diffusion Auto-regressive Transformer for Effective Self-supervised Time Series Forecasting**](https://arxiv.org/pdf/2410.05711).
+
+**Authors**: Cheng, Mingyue and Tao, Xiaoyu and Liu, Qi and Zhang, Hao and Chen, Yiheng and Lei, Chenyi
+
+```bibtex
+@article{wang2024diffusion,
+  title={Diffusion Auto-regressive Transformer for Effective Self-supervised Time Series Forecasting},
+  author={Wang, Daoyu and Cheng, Mingyue and Liu, Zhiding and Liu, Qi and Chen, Enhong},
+  journal={arXiv preprint arXiv:2410.05711},
+  year={2024}
+}
+```
+
+3, [**FormerTime: Hierarchical Multi-Scale Representations for Multivariate Time Series Classification**](https://arxiv.org/pdf/2302.09818).
 
 **Authors**: Cheng, Mingyue and Liu, Qi and Liu, Zhiding and Li, Zhi and Luo, Yucong and Chen, Enhong
 
@@ -62,7 +75,7 @@ In this work, we propose TimeMAE, a novel self-supervised paradigm for learning 
 }
 ```
 
-3, [**Convtimenet: A deep hierarchical fully convolutional model for multivariate time series analysis**](https://arxiv.org/pdf/2403.01493).
+4, [**Convtimenet: A deep hierarchical fully convolutional model for multivariate time series analysis**](https://arxiv.org/pdf/2403.01493).
 
 **Authors**: Cheng, Mingyue and Yang, Jiqian and Pan, Tingyue and Liu, Qi and Li, Zhi
 
@@ -75,7 +88,7 @@ In this work, we propose TimeMAE, a novel self-supervised paradigm for learning 
 }
 ```
 
-4, [**InstructTime: Advancing Time Series Classification with Multimodal Language Modeling**](https://arxiv.org/pdf/2403.12371).
+5, [**InstructTime: Advancing Time Series Classification with Multimodal Language Modeling**](https://arxiv.org/pdf/2403.12371).
 
 **Authors**: Cheng, Mingyue and Chen, Yiheng and Liu, Qi and Liu, Zhiding and Luo, Yucong
 
