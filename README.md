@@ -4,6 +4,29 @@
   <h2><b> TimeMAE: Self-supervised Representation of Time Series with Decoupled Masked Autoencoders </b></h2>
 </div>
 
+[![Paper](https://img.shields.io/badge/arXiv-2303.00320-b31b1b.svg)](https://arxiv.org/abs/2303.00320)
+[![Conference](https://img.shields.io/badge/WSDM-2026-blue.svg)]()
+
+</div>
+
+---
+
+## 📄 Paper
+
+**TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders**
+
+Authors:  
+Mingyue Cheng, Xiaoyu Tao, Zhiding Liu, Qi Liu, Hao Zhang, Rujiao Zhang, Enhong Chen
+
+Conference:  
+Proceedings of the ACM International Conference on Web Search and Data Mining (WSDM 2026)
+
+📄 Paper link:  
+https://arxiv.org/abs/2303.00320
+
+📄 PDF:  
+https://arxiv.org/pdf/2303.00320.pdf
+
 ---
 >
 > 🙋 Please let us know if you find out a mistake or have any suggestions!
