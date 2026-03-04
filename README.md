@@ -1,7 +1,7 @@
 <div align="center">
   <!-- <h1><b> Time-LLM </b></h1> -->
   <!-- <h2><b> Time-LLM </b></h2> -->
-  <h2><b> TimeMAE: Self-supervised Representation of Time Series with Decoupled Masked Autoencoders </b></h2>
+  <h2><b> TimeMAE: Self-supervised Representation of Time Series with Decoupled Masked Autoencoders (ACM WSDM2026, Accepted) </b></h2>
 </div>
 
 [![Paper](https://img.shields.io/badge/arXiv-2303.00320-b31b1b.svg)](https://arxiv.org/abs/2303.00320)
