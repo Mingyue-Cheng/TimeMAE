@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders</title>
+
+  <!-- Google Scholar meta tags -->
+  <meta name="citation_title" content="TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders">
+  <meta name="citation_author" content="Cheng, Mingyue">
+  <meta name="citation_author" content="Tao, Xiaoyu">
+  <meta name="citation_author" content="Liu, Zhiding">
+  <meta name="citation_author" content="Liu, Qi">
+  <meta name="citation_author" content="Zhang, Hao">
+  <meta name="citation_author" content="Zhang, Rujiao">
+  <meta name="citation_author" content="Chen, Enhong">
+  <meta name="citation_publication_date" content="2026/02/27">
+  <meta name="citation_conference_title" content="Proceedings of the Nineteenth ACM International Conference on Web Search and Data Mining">
+  <meta name="citation_arxiv_id" content="2303.00320">
+  <meta name="citation_doi" content="10.1145/3773966.3778007">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2303.00320">
+  <meta name="citation_abstract_html_url" content="https://mingyue-cheng.github.io/timemae/">
+  <link rel="canonical" href="https://mingyue-cheng.github.io/timemae/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --dark: #111827;
+      --mid: #374151;
+      --light: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --bg-code: #f9fafb;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Venue badge */
+    .venue-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    /* Title */
+    h1 {
+      font-size: clamp(22px, 4vw, 28px);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    /* Authors */
+    .authors {
+      font-size: 15px;
+      color: var(--mid);
+      margin-bottom: 32px;
+    }
+    .authors span { font-weight: 500; }
+
+    /* Action buttons */
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.1s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-primary {
+      background: var(--dark);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--mid); }
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover { background: var(--bg-code); }
+
+    /* Section headings */
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* Abstract */
+    .section { margin-bottom: 48px; }
+    .abstract-text {
+      font-size: 15.5px;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* BibTeX */
+    .bibtex-wrap {
+      position: relative;
+    }
+    .bibtex-code {
+      display: block;
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--mid);
+      white-space: pre;
+      overflow-x: auto;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--dark);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover { background: var(--mid); }
+    .copy-btn.copied {
+      background: #16a34a;
+    }
+
+    /* SVG icons */
+    .icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 13px;
+      color: var(--light);
+      text-align: center;
+      padding-top: 16px;
+    }
+    footer a { color: var(--light); }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="venue-badge">WSDM 2026</div>
+
+  <h1>TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders</h1>
+
+  <p class="authors">
+    <span>Mingyue Cheng</span>,
+    <span>Xiaoyu Tao</span>,
+    <span>Zhiding Liu</span>,
+    <span>Qi Liu</span>,
+    <span>Hao Zhang</span>,
+    <span>Rujiao Zhang</span>,
+    <span>Enhong Chen</span>
+  </p>
+
+  <div class="buttons">
+    <a class="btn btn-primary" href="https://arxiv.org/abs/2303.00320" target="_blank" rel="noopener">
+      <!-- arXiv icon -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      arXiv
+    </a>
+    <a class="btn btn-primary" href="https://arxiv.org/pdf/2303.00320" target="_blank" rel="noopener">
+      <!-- PDF icon -->
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <line x1="9" y1="13" x2="15" y2="13"/>
+        <line x1="9" y1="17" x2="15" y2="17"/>
+        <polyline points="9 9 10 9"/>
+      </svg>
+      PDF
+    </a>
+    <a class="btn btn-outline" href="https://github.com/Mingyue-Cheng/TimeMAE" target="_blank" rel="noopener">
+      <!-- GitHub icon -->
+      <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+      Code
+    </a>
+    <a class="btn btn-outline" href="https://doi.org/10.1145/3773966.3778007" target="_blank" rel="noopener">
+      <!-- DOI/ACM icon -->
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      ACM DL
+    </a>
+    <a class="btn btn-outline" href="#bibtex" onclick="document.getElementById('bibtex').scrollIntoView({behavior:'smooth'});return false;">
+      <!-- Quote icon -->
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+        <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+      </svg>
+      BibTeX
+    </a>
+  </div>
+
+  <!-- Abstract -->
+  <div class="section">
+    <h2>Abstract</h2>
+    <p class="abstract-text">
+      Learning transferable representations from unlabeled time series is crucial for improving performance in data-scarce classification. Existing self-supervised methods often operate at the point level and rely on unidirectional encoding, leading to low semantic density and a mismatch between pre-training and downstream optimization. In this paper, we propose TimeMAE, a self-supervised framework that reformulates masked modeling for time series via semantic unit elevation and decoupled representation learning. Instead of modeling individual time steps, TimeMAE segments time series into non-overlapping sub-series to form semantically enriched units, enabling more informative masked reconstruction while reducing computational cost. To address the representation discrepancy introduced by masking, we design a decoupled masked autoencoder that separately encodes visible and masked regions, avoiding artificial masked tokens in the main encoder. To guide pre-training, we introduce two complementary objectives: masked codeword classification, which discretizes sub-series semantics via a learned tokenizer and masked representation regression, which aligns continuous representations through a momentum-updated target encoder. Extensive experiments on five datasets demonstrate that TimeMAE outperforms competitive baselines, particularly in label-scarce scenarios and transfer learning scenarios.
+    </p>
+  </div>
+
+  <!-- BibTeX -->
+  <div class="section" id="bibtex">
+    <h2>BibTeX</h2>
+    <div class="bibtex-wrap">
+      <pre id="bibtex-code" class="bibtex-code">@inproceedings{cheng2026timemae,
+  author    = {Cheng, Mingyue and Tao, Xiaoyu and Liu, Zhiding and
+               Liu, Qi and Zhang, Hao and Zhang, Rujiao and Chen, Enhong},
+  title     = {{TimeMAE}: Self-Supervised Representations of Time Series
+               with Decoupled Masked Autoencoders},
+  booktitle = {Proceedings of the Nineteenth {ACM} International Conference
+               on Web Search and Data Mining},
+  series    = {{WSDM} '26},
+  year      = {2026},
+  publisher = {{ACM}},
+  doi       = {10.1145/3773966.3778007},
+  note      = {arXiv:2303.00320}
+}</pre>
+      <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>TimeMAE &middot; WSDM 2026 &middot; <a href="https://doi.org/10.1145/3773966.3778007">10.1145/3773966.3778007</a></p>
+  </footer>
+
+</div>
+
+<script>
+  function copyBibtex(btn) {
+    navigator.clipboard.writeText(document.getElementById('bibtex-code').textContent).then(function() {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = 'Copy';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
