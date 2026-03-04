@@ -11,11 +11,12 @@
 > 🌟 If you find this resource helpful, please consider to star this repository and cite our research:
 
 ```
-@article{cheng2023timemae,
-  title={Timemae: Self-supervised representations of time series with decoupled masked autoencoders},
-  author={Cheng, Mingyue and Liu, Qi and Liu, Zhiding and Zhang, Hao and Zhang, Rujiao and Chen, Enhong},
-  journal={arXiv preprint arXiv:2303.00320},
-  year={2023}
+@inproceedings{cheng2026timemae,
+  title={TimeMAE: Self-Supervised Representations of Time Series with Decoupled Masked Autoencoders},
+  author={Cheng, Mingyue and Tao, Xiaoyu and Liu, Zhiding and Liu, Qi and Zhang, Hao and Zhang, Rujiao and Chen, Enhong},
+  booktitle={Proceedings of the Nineteenth ACM International Conference on Web Search and Data Mining},
+  pages={498--508},
+  year={2026}
 }
 ```
 
